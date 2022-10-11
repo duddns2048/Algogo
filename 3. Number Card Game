@@ -1,0 +1,15 @@
+n,m = map(int,input().split())
+
+result =0
+
+for i in range(n): # 행렬이 n번 들어옴
+    
+    # 각 행렬에서 가장 작은 수를 뽑음
+    Min = min(map(int,input().split()))
+    
+    # 다음 행렬의 가장 작은 수가 더 작다면 업데이트
+    if result < Min:
+        result=Min
+        
+        
+print(result)
