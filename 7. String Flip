@@ -1,0 +1,43 @@
+# 풀이 1번
+
+a=input()
+
+count0=0 # 모두 0으로 뒤집을 때의 횟수
+count1=0 # 모두 1으로 뒤집을 때의 횟수
+
+if a[0] == '0': # 맨처음 숫자가 반대면 더하기 1
+    count1+=1
+else:
+    count0+=1
+    
+count1+=a.count('10') # 1에서 0으로 바뀌는 횟수 count
+count0+=a.count('01') # 0에서 1으로 바뀌는 횟수 count
+
+print(min(count0,count1)) # 그중에 작은거 출력
+
+==============================================================================================
+
+# 풀이 2번 
+
+# 예시 답안
+data = input()
+count0 = 0 #전부 0으로 바꾸는 경우
+count1 = 0 #전부 1로 바꾸는 경우
+
+# 첫 번째 원소에 대해서 처리
+if data [0] == '1':
+    count0+=1
+else:
+    count1+=1
+    
+# 두번째 원소부터
+for i in range(len(data)-1):
+    if data[i] != data[i+1]:
+        # 0에서 1로 바뀌는경우
+        if data[i+1] =='1':
+            count0 +=1
+        # 1에서 0으로 바쒸는 경우
+        else:
+            count1 +=1
+            
+print(min(count0, count1))
