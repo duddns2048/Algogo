@@ -1,3 +1,5 @@
+# 풀이 1번
+
 # n, m, k를 공백으로 구분하여 입력받기
 n, m, k = map(int, input().split())
 
@@ -14,4 +16,26 @@ count = m-m//(k+1)
 # 결과 계산
 result = second*(m//(k+1)) + first*(m-m//(k+1))
 
+print(result)
+
+=========================================================================================================================================================
+# 풀이 2번
+
+n,m,k = map(int,input().split())
+
+data = list(map(int,input().split()))
+
+First = max(data) # 가장 큰 수
+data.remove(First)
+Second = max(data) # 가장 작은 수
+result=0
+
+while m>0: 
+    for i in range(k): # 가장 큰 수를 k번 더하기
+        result += First
+        m-=1
+    result += Second # 두번째로 큰 수를 1번 더하기
+    m-=1
+    # m번 반복
+    
 print(result)
