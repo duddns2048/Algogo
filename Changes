@@ -1,0 +1,14 @@
+# 물려줘야하는 금액 입력
+n = int(input())
+count = 0 
+
+# 큰 단위의 화폐부터 차례대로 확인
+coin = [500, 100, 50, 10]
+
+for i in coin:
+    
+    # 해당 화폐로 거슬러 줄 수  있는 동전의 최대 갯수 세기
+    count += n//i 
+    n %= i
+    
+print(count)
