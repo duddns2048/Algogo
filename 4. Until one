@@ -1,0 +1,13 @@
+n, k = map(int,input().split())
+
+count = 0
+
+while n!=1: # 1이 될 때 까지 반복
+    
+    if n%k==0: # k로 나누어지면 나눈다.
+        n/=k
+    else: # k로 나누어지지 않으면 1 뺀다.
+        n-=1
+    count+=1
+    
+print(count)
