@@ -17,3 +17,13 @@ if sum(a[:len(a)//2]) == sum(a[len(a)//2:]):
 else:
     print('READY')
 ///
+
+문자열 재정렬
+
+n = input()
+
+num = [int(x) for x in n if x.isdigit() == True ]
+alpha = [x for x in n if x.isdigit() == False ]
+alpha.sort()
+
+print(''.join(alpha)+str(sum(num)))
