@@ -1,4 +1,68 @@
-Lucky strike
+## 상하좌우
+# 입력받기
+n = int(input())
+x, y = 1, 1
+plans = input().split()
+
+
+# L, R, U, D에 대하여
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move = ['L', 'R', 'U', 'R']
+
+for i in plans:
+    for k in range(len(move)):
+        if i == move[k]:
+            x += dx[k]
+            y += dy[k]
+    if x<1 or x>n or y>n or  y<1:
+        continue
+        
+print(x,y)
+        
+#=======================================================================
+##시각
+
+#입력받기
+n = int(input())
+count=0
+
+# 3중 반복문 만들기
+for i in range(n+1):
+    for j in range(60):
+        for k in range(60):
+            if '3' in str(i) + str(j) + str(k):
+                count+=1
+                
+print(count)
+
+#========================================================================
+
+## 왕실의 나이트 
+
+# 입력받기
+input_data = input()
+row = int(input_data[1])
+column = int(ord(input_data[0]))-int(ord('a'))+1
+
+# 가능한 이동 
+moves = [(-2,1), (-2,-1),(2,1),(2,-1),(1,2),(-1,2),(1,-2),(-1,-2)]
+
+result = 0
+
+# moves 안에 있는 움직임 적용
+for i in moves:
+    next_row = row + i[0]
+    next_column = column + i[1]
+    
+    #체스판 안에 있다면 result 증가!
+    if next_row<=8 and next_row>=1 and next_column>=1 and next_column<=8:
+        result +=1
+        
+print(result)
+
+#===============================================================================
+## Lucky Strike
 
 # input받기
 n = input()
@@ -18,7 +82,9 @@ else:
     print('READY')
 ///
 
-문자열 재정렬
+#================================================================================
+
+##문자열 재정렬
 
 n = input()
 
@@ -33,3 +99,6 @@ alpha.sort()
 
 # 합치기!
 print(''.join(alpha)+str(sum(num)))
+#==================================================================================
+
+##
