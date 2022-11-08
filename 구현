@@ -100,5 +100,19 @@ alpha.sort()
 # 합치기!
 print(''.join(alpha)+str(sum(num)))
 #==================================================================================
+# 백과사전
+def solution(word):
+    alpha = ['', 'A', 'E', 'I', 'O', 'U']
+    dictionary=[]
+    for a in alpha:
+        for b in alpha:
+            for c in alpha:
+                for d in alpha:
+                    for e in alpha:
+                        if a+b+c+d+e in dictionary:
+                            continue
+                        else:
+                            dictionary.append(a+b+c+d+e)
 
-##
+    dictionary.sort()
+    return dictionary.index(word)
